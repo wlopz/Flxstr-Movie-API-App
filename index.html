@@ -30,25 +30,27 @@
     </nav>
     <header id="search__body">
       <div class="flix__search--container">
-        <div class="flix__search--row">
-          <label class="flix__search--label">
-            <h1>Search for your flix</h1>
-          </label>
+        <label class="flix__search--label">
+          <h1>Search for your flix</h1>
+        </label>
+        <div class="flix__search--border">
           <input class="search__input" type="text" placeholder="Search by movie name" onchange="onSearchFlix(event)">
+          <i class="fa-solid fa-magnifying-glass search-icon" onchange="onSearchFlix(event)"></i>
         </div>
       </div>
     </header>
   </section>
   <main>
-    <section>
+    <section class="section__search-results">
       <div class="flix__content-wrapper">
         <div class="flix__search-results">
           <span class="flix__search-results--title">
-            Search Results
+            Search Results:
           </span>
         </div>
         <div class="flix__sort">
-          <select id="filter" onchange="filterYears(event)">
+          <i class="fa-solid fa-sort"></i>
+          <select class="flix__filter" id="filter" onchange="filterYears(event)">
             <option value="" disabled selected>Sort</option>
             <option value="LATEST_TO_EARLIEST">Year, Latest to Earliest</option>
             <option value="EARLIEST_TO_LATEST">Year, Earliest to Latest</option>

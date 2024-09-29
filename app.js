@@ -99,4 +99,3 @@ function filterYears(event) {
   // Pass the current filter option to the flixInfo function
   flixInfo('everything', filter);
 }
-
