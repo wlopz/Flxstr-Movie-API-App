@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <script src="https://kit.fontawesome.com/39e2481b20.js" crossorigin="anonymous" defer></script>
+  <script src="app.js" defer></script>
+  <title>Flixster | Everything you need to know about your favoorite movies!</title>
+</head>
+<body>
+  <section id="landing">
+    <nav>
+      <div class="nav__container">
+        <div class="nav__logo--wrapper">
+          <img src="./assets/flixstr_logo.png" alt="" class="nav__logo">
+        </div>
+        <ul class="nav__links--wrapper">
+          <li class="nav__link">
+            <a href="" class="nav__link--anchor">Home</a>
+          </li>
+          <li class="nav__link">
+            <a href="" class="nav__link--anchor">Find your flix</a>
+          </li>
+          <li class="nav__link">
+            <a href="" class="nav__link--anchor">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <header id="search__body">
+      <div class="flix__search--container">
+        <div class="flix__search--row">
+          <label class="flix__search--label">
+            <h1>Search for your flix</h1>
+          </label>
+          <input class="search__input" type="text" placeholder="Search by movie name" onchange="onSearchFlix(event)">
+        </div>
+      </div>
+    </header>
+  </section>
+  <main>
+    <section>
+      <div class="flix__content-wrapper">
+        <div class="flix__search-results">
+          <span class="flix__search-results--title">
+            Search Results
+          </span>
+        </div>
+        <div class="flix__sort">
+          <select id="filter" onchange="filterYears(event)">
+            <option value="" disabled selected>Sort</option>
+            <option value="LATEST_TO_EARLIEST">Year, Latest to Earliest</option>
+            <option value="EARLIEST_TO_LATEST">Year, Earliest to Latest</option>
+          </select>
+        </div>
+      </div>
+      <div class="flix-list">
+        <div class="flix__loading--spinner">
+          <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script><lottie-player src="https://lottie.host/18ebfa88-40d8-459f-8544-8dc595e70427/ieK6v5M4eF.json" background="##ffffff" speed="1" style="width: 300px; height: 300px" loop autoplay direction="1" mode="normal"></lottie-player>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
