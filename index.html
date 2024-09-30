@@ -13,7 +13,7 @@
     <nav>
       <div class="nav__container">
         <div class="nav__logo--wrapper">
-          <img src="./assets/flixstr_logo.png" alt="" class="nav__logo">
+          <a href="index.html"><img src="./assets/flixstr_logo.png" alt="" class="nav__logo"></a>
         </div>
         <ul class="nav__links--wrapper">
           <li class="nav__link">
@@ -23,7 +23,7 @@
             <a href="" class="nav__link--anchor">Find your flix</a>
           </li>
           <li class="nav__link">
-            <a href="" class="nav__link--anchor">Contact Us</a>
+            <a href="#" class="nav__link--anchor no-pointer contact__button" onclick="errorWindow()">Contact Us</a>
           </li>
         </ul>
       </div>
@@ -31,7 +31,7 @@
     <header id="search__body">
       <div class="flix__search--container">
         <label class="flix__search--label">
-          <h1>Search for your flix</h1>
+          <h1 class="flix__search--title">Search for your flix</h1>
         </label>
         <div class="flix__search--border">
           <input class="search__input" type="text" placeholder="Search by movie name" onchange="onSearchFlix(event)">
@@ -40,6 +40,14 @@
       </div>
     </header>
   </section>
+  <!-- <div class="modal">
+    <div class="modal__row modal__info">
+      <i class="fa-solid fa-xmark modal__exit click" onclick="toggleModal()"></i>
+      <h3 class="modal__title modal__title--about">Here's a bit about me.</h3>
+      <h4 class="modal__sub-title modal__sub-title--about">Frontend Software Engineer.</h4>
+      <p class="modal__par">Over <b class="text--teal">5+ years</b> of combined <b class="text--teal">experience</b> building and maintaining websites and web applications for a variety of clients, specializing in <b class="text--teal">HTML, CSS, JavaScript, PHP, custom API, WordPress and React.</b> Proven ability to work remotely with cross-functional teams and deliver high-quality projects on <b class="text--teal">time and within scope.</b></p>
+    </div>
+  </div> -->
   <main>
     <section class="section__search-results">
       <div class="flix__content-wrapper">
@@ -49,7 +57,7 @@
           </span>
         </div>
         <div class="flix__sort">
-          <i class="fa-solid fa-sort"></i>
+          <i class="fa-solid fa-sort sort-icon"></i>
           <select class="flix__filter" id="filter" onchange="filterYears(event)">
             <option value="" disabled selected>Sort</option>
             <option value="LATEST_TO_EARLIEST">Year, Latest to Earliest</option>
