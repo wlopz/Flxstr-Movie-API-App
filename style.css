@@ -140,15 +140,15 @@ MODAL
   margin-bottom: 10px;
 }
 
-.rating__green {
+.rating-green {
   color: green;
 }
 
-.rating__yellow {
-  color: yellow;
+.rating-yellow {
+  color: rgb(255, 183, 0);
 }
 
-.rating__red {
+.rating-red {
   color: red;
 }
 

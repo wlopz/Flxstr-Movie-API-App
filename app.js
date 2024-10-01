@@ -139,23 +139,47 @@ async function showMovieInfo(imdbID) {
 
 // Function to create the HTML structure for the movie details in the modal
 function movieInfoHTML(moviesInfo) {
-  return `<i class="fa-solid fa-xmark modal__exit click" onclick="toggleModal()"></i>
-          <h3 class="modal__title">${moviesInfo.Title}</h3>
-          <p class="modal__par"><b>Year:</b>&nbsp ${moviesInfo.Year}</p>
-          <p class="modal__par"><b>Genre:</b>&nbsp ${moviesInfo.Genre}</p>
-          <p class="modal__par"><b>Plot:</b> ${moviesInfo.Plot}</p>
-          <div class="ratings__wrapper">
-            <div class="rating" onchange="ratingColors(event)">
-              <h4>IMDB</hr>
-              <h5>Rating:</hr><span>&nbsp${moviesInfo.imdbRating}</span>
-            </div>
-            <div class="rating" onchange="ratingColors(event)">
-              <h4>Metascore</hr>
-              <h5>Rating:</hr><span>&nbsp${moviesInfo.Metascore}</span>
-            </div>
-          </div>
-          <img src="${moviesInfo.Poster}" alt="${moviesInfo.Title}" class="modal__img">`;
+  const imdbColorClass = getRatingColorClass(moviesInfo.imdbRating, 'imdb');  // Get color class for IMDb rating
+  const metascoreColorClass = getRatingColorClass(moviesInfo.Metascore, 'meta');  // Get color class for Metascore
+
+  return `
+    <i class="fa-solid fa-xmark modal__exit click" onclick="toggleModal()"></i>
+    <h3 class="modal__title">${moviesInfo.Title}</h3>
+    <p class="modal__par"><b>Year:</b>&nbsp ${moviesInfo.Year}</p>
+    <p class="modal__par"><b>Genre:</b>&nbsp ${moviesInfo.Genre}</p>
+    <p class="modal__par"><b>Plot:</b> ${moviesInfo.Plot}</p>
+    <div class="ratings__wrapper">
+      <div class="rating">
+        <h4>IMDB</h4>
+        <h5>Rating:</h5>
+        <span class="${imdbColorClass}">&nbsp${moviesInfo.imdbRating}</span>  <!-- Apply IMDb color class -->
+      </div>
+      <div class="rating">
+        <h4>Metascore</h4>
+        <h5>Rating:</h5>
+        <span class="${metascoreColorClass}">&nbsp${moviesInfo.Metascore}</span>  <!-- Apply Metascore color class -->
+      </div>
+    </div>
+    <img src="${moviesInfo.Poster}" alt="${moviesInfo.Title}" class="modal__img">
+  `;
 }
+
+// Function to determine the color class based on rating value
+function getRatingColorClass(rating, type) {
+  if (type === 'imdb') {
+    rating = parseFloat(rating);  // Convert imdbRating to a float for comparison
+    if (rating <= 5.0) return 'rating-red';  // Red for ratings <= 5.0
+    if (rating <= 7.0) return 'rating-yellow';  // Yellow for ratings <= 7.0
+    if (rating >= 7.1) return 'rating-green';  // Green for ratings >= 8.0
+  } else if (type === 'meta') {
+    rating = parseInt(rating);  // Convert Metascore to an integer for comparison
+    if (rating <= 50) return 'rating-red';  // Red for Metascore <= 50
+    if (rating <= 70) return 'rating-yellow';  // Yellow for Metascore <= 70
+    if (rating >= 71) return 'rating-green';  // Green for Metascore >= 80
+  }
+  return '';  // Default: No color class
+}
+
 
 // Function to toggle modal visibility
 function toggleModal() {
