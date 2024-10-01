@@ -76,8 +76,8 @@ function flexHTML(movie) {
               <img src="${movie.Poster}" alt="Movie Poster" class="flix_img">
             </div>
             <div class="flix__content">
-              <h3>${movie.Title}</h3>
-              <h4>${movie.Year}</h4>
+              <h3 class="flix__title">${movie.Title}</h3>
+              <h4 class="flix__year">${movie.Year}</h4>
               <a href="https://www.imdb.com/title/${movie.imdbID}/" target="_blank">
                 <i class="fa-brands fa-imdb imdb__logo"></i>
               </a>

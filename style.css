@@ -295,7 +295,15 @@ HEADER
 }
 
 .flix_img {
-  width: 200px;
+  width: 100%;
+}
+
+.flix__title {
+  font-size: 24px;
+}
+
+.flix__year {
+  font-size: 20px;
 }
 
 .imdb__logo {
@@ -331,6 +339,12 @@ HEADER
     font-size: 14px; /* Reduce paragraph font size for smaller screens */
   }
 }
+
+/* 
+
+MEDIA QUERIES
+
+*/
 
 @media (max-width: 669px) {
 
