@@ -144,6 +144,16 @@ function movieInfoHTML(moviesInfo) {
           <p class="modal__par"><b>Year:</b>&nbsp ${moviesInfo.Year}</p>
           <p class="modal__par"><b>Genre:</b>&nbsp ${moviesInfo.Genre}</p>
           <p class="modal__par"><b>Plot:</b> ${moviesInfo.Plot}</p>
+          <div class="ratings__wrapper">
+            <div class="rating" onchange="ratingColors(event)">
+              <h4>IMDB</hr>
+              <h5>Rating:</hr><span>&nbsp${moviesInfo.imdbRating}</span>
+            </div>
+            <div class="rating" onchange="ratingColors(event)">
+              <h4>Metascore</hr>
+              <h5>Rating:</hr><span>&nbsp${moviesInfo.Metascore}</span>
+            </div>
+          </div>
           <img src="${moviesInfo.Poster}" alt="${moviesInfo.Title}" class="modal__img">`;
 }
 
@@ -157,3 +167,10 @@ function toggleModal() {
   }
 }
 
+// --- WIP ---
+
+// function ratingColors(imdbRating, Metascore) {
+//   if (imdbRating >= 8.0) {
+//     return `<h5>Rating:</hr><span class="rating__green">&nbsp${imdbRating}</span>`
+//   } 
+// }

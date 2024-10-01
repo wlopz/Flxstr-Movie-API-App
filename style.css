@@ -133,6 +133,25 @@ MODAL
   text-align: justify; /* Justify text for better readability */
 }
 
+.ratings__wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-bottom: 10px;
+}
+
+.rating__green {
+  color: green;
+}
+
+.rating__yellow {
+  color: yellow;
+}
+
+.rating__red {
+  color: red;
+}
+
 .modal__img {
   width: 50%;
   margin: 0 auto;
